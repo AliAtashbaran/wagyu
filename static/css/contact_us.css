@@ -1,0 +1,102 @@
+
+
+.contact-us-container{
+    position: relative;
+    top: 127px;
+    left: 800px;
+    width: 300px;
+    border-bottom: 1px solid rgba(74, 75, 75, 0.671); 
+  }
+  
+  .question{
+    
+    top: 300px;
+    left: 900px;
+    color:beige;
+  }
+  
+  .contact-us{
+    
+    top: 350px;
+    left: 900px;
+    color:beige;
+    padding-top: 50px;
+    text-decoration: black;
+    transition: text-decoration 1s ;
+  }
+  .contact-us:hover{
+    text-decoration: underline beige;
+    color: beige;
+  }
+  
+  .label{
+    font-size: 13px;
+    color: #747272;
+    background-color: #000000;
+    position: relative;
+    top: 24px;
+    left: 10px;
+  }
+  
+  
+  /* ------------------------- */
+  /* contact us form page */
+  
+  .contact_us_container{
+  padding-top: 250px ;
+  
+  display: flex;
+  justify-content: center;
+  
+  }
+  
+  #id_description{
+    width: 400px;
+    height: 300px;
+    margin-top: 10px;
+    background-color: black;
+    outline: 1px solid #6161619a;
+    border: none;
+    color: beige;
+    border-radius: 0;
+    transition: outline 1s, border-radius 1s;
+  }
+  
+  
+  #id_fullname, #id_phone, 
+  #id_category{
+    width: 200px;
+    height: 45px;
+    margin-top: 10px;
+    background-color: black;
+    outline: 1px solid #6161619a;
+    border: none;
+    color: beige;
+    border-radius: 0;
+    transition: outline 1s, border-radius 1s;
+  }
+  
+  #id_fullname:hover, #id_phone:hover, 
+  #id_category:hover, #id_description:hover{
+    outline: 1px solid beige;
+    border-radius: 3px;
+  }
+  
+  .phone_label{
+    margin-left: 175px;
+  }
+  #id_phone{
+    margin-left: 20px;
+    width: 178px;
+  
+  }
+  
+  #id_category{
+    height: 30px;
+  }
+  .contact_us_title{
+    color: beige; 
+    font-family:Arial, Helvetica, sans-serif;
+  
+  }
+  

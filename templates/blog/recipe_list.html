@@ -1,0 +1,16 @@
+{% extends 'maintemplate.html' %}
+
+{% block title %}Recipe List{% endblock %}
+
+{% block content %}
+<div style='padding-top:300px; color: beige;' class='container'>
+{% for recipe in recipe  %}
+<div><img style='width:40%' src="{{media_url}}{{recipe.image}}" alt=""></div>
+<br>
+<h4>{{recipe.title}}</h4>
+<br>
+<article style='width:65%'>{{recipe.short_des}}</article>
+<a style='color:beige;' href="{% url 'blog:recipe_detail' recipe.slug %}"><p>read more</p></a>
+{% endfor %}
+</div>
+{% endblock  %}

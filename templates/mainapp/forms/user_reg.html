@@ -1,0 +1,22 @@
+{% extends 'maintemplate.html' %}
+
+
+{% block title %} User Registration{% endblock  %}
+
+
+
+{% block content %}
+<div class='user_reg_form'>
+
+    <form action="" method='POST'>
+        {% csrf_token %}
+        
+        <table>
+            
+            {{form.as_table}} 
+        </table>
+        <button type="submit" class=" user_formControl-submit">CREATE ACCOUNT</button>
+    </form>
+</div></div></div>
+
+{% endblock  %}

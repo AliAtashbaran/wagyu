@@ -1,0 +1,49 @@
+{% comment %} 
+<div class='navbar-container'> {% endcomment %}
+<nav style='position:fixed;' class="navbar navbar-expand-lg bg-black">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class=" acc-btn nav-link active text-light" aria-current="page" href="/">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class=" acc-btn nav-link text-light" href="/about_us/">ABOUT US</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class=" acc-btn nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              DROPDOWN
+            </a>
+            <ul class="dropdown-menu bg-black">
+              <li><a class=" acc-btn dropdown-item text-light" href="{% url 'blog:recipe_list' %}">BLOG</a></li>
+              <li><hr class=" dropdown-divider"></li>
+              <li><a class="acc-btn dropdown-item text-light" href="/download_pdf/">DOWNLOAD PRODUCT PDF</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="acc-btn nav-link text-light" href="{% url 'contact_us:contact_us' %}">CONTACT US</a>
+          </li>
+        </ul>
+        <a class="navbar-brand text-light" href="/" ><img class='logo' src="{{media_url}}images/logo/the-wagyu-logo.png" alt=""></a>
+        {% if user.is_authenticated %}
+        <a class="acc-btn " href="{% url 'mainapp:user_logout' %}">LOGOUT</a>
+        <a href="/user_panel/{{user.id}}/"><p class='username-greeting'> ACCOUNT</p></a>
+        {% else %}
+        <a class="acc-btn " href="{% url 'mainapp:user_login' %}">ACCOUNT</a>
+        {% endif %}
+          <a class="acc-btn " href='#'>CART</a>
+          <form class="d-flex" role="search" method='POST' action="{% url 'mainapp:search' %}">
+            {% csrf_token %}
+            <input name='searched' class=" search_input form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            {% comment %} <button class="search_btn btn btn-outline-light text-light" type="submit">Search</button> {% endcomment %}
+            <button class="search-btn" type="submit"><i class='fa fa-search'></i></button>
+          </form>
+
+      </div>
+    </div>
+  </nav>
+{% comment %} </div> {% endcomment %}

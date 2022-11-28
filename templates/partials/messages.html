@@ -1,0 +1,7 @@
+{% if messages %}
+{% for msg in messages %}
+
+<p id='hideMe' class="alert alert-dark" role="alert">{{msg|safe}}</p> 
+
+{% endfor %}
+{% endif %}

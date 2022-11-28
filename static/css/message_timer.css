@@ -1,0 +1,45 @@
+/* timer for messages */
+
+html, body, #container {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+  }
+  #container {
+    overflow:hidden;
+    position:relative;
+  }
+  #hideMe {
+    -webkit-animation: cssAnimation 3s forwards; 
+    animation: cssAnimation 3s forwards;
+  }
+  @keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  @-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+  }
+  
+  /* ---------------------- */
+  
+  #id_form-0-image_path{
+    margin: 20px;
+  }
+
+
+  /* messages: alert */
+
+.alert{
+  z-index: 2;
+  width: 300px;
+  position: relative;
+  top: 130px;
+  left: 15px;
+  color: black;
+  background-color: beige;
+}

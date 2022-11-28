@@ -1,0 +1,63 @@
+{% extends 'maintemplate.html' %}
+
+{% block title %} Contact us{% endblock  %}
+{% block content %}
+
+<div class=' contact_us_container'>
+<form action="" method='POST' id='contact_us'>
+    {% csrf_token %}
+  
+    <table>
+        <h3 class='contact_us_title'>CONTACT US</h3><hr><hr><hr>
+        <p class='contact_us_title'>We will be more than happy to be of any assistance or answer <br> any query in your mind. </p>
+        <tr style='display: inline; '>
+            <label class='label' for="id_fullname">Full Name</label>
+            <td>{{form.fullname}}</td>
+
+            <label class='label phone_label' for="id_phone">Phone</label>
+            <td class='phone_td' >{{form.phone}}</td>
+        </tr>
+        
+        <tr>
+            <tr><td><label class='label' for="id_email">Email</label></td></tr>
+            <td>{{form.email}}</td>
+        </tr>
+        
+        <tr>
+            <tr><td><label class='label' for="id_category">Category</label></td></tr>
+            <td>{{form.category}}</td>
+        </tr>
+        
+        <tr>
+            <tr><td><label class='label' for="id_description">Description</label></td></tr>
+            <td>{{form.description}}</td>
+        </tr>
+        
+        <tr>
+            <td>
+                <button type="submit" class="user_formControl-submit">SEND MESSAGE</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+
+<script type='text/javascript'>
+$(document).ready(function(){
+$('#contact_us').submit(function(){
+
+    $.ajax({
+        type:'POST',
+        url:"{% url 'contact_us:contact_us' %}",
+        data:$(this).serialize(),
+        success:function(data){
+            alert('Dear '+ data.name + ' we have successfully received your message.')
+        }
+
+    });
+    return false
+});
+});
+</script>
+
+{% endblock  %}

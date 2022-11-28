@@ -1,0 +1,16 @@
+/* Login form text */
+
+.login_text,.login_link{
+  
+    color: beige;
+    text-decoration: black;
+    text-align: center;
+    margin-top: 20px;
+    transition:text-decoration 1s;
+  }
+  
+  .login_link:hover{
+    color: beige;
+    text-decoration: underline white;
+  
+  }

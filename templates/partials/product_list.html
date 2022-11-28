@@ -1,0 +1,21 @@
+        
+        <div class='featured_product_container' >
+            <h4 class='featured_product'>FEATURED PRODUCTS</h4>
+        </div>
+     
+        <div class='product_container'>
+            {% for product in product %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{media_url}}{{product.image}}/product-{{product.id}}.jpg" class="card-img-top" alt="product">
+                <div class="card-body">
+                <h5 class="card-title">{{product.title}}</h5>
+                <p class="card-text">{{product.short_des}}</p>
+                <p class="card-text">${{product.price}}</p>
+
+                <a href="product_details/{{product.slug}}" class=" product_btn btn btn-dark">SEE DETAILS</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+  

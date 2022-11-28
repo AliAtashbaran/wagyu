@@ -1,0 +1,47 @@
+
+/* forms: user registeration container */
+
+.user_reg_form{
+    height: 800px;
+    /* position: relative; */
+    /* right: 400px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user_formControl{
+    width: 400px;
+    height: 45px;
+    margin-top: 10px;
+    background-color: black;
+    outline: 1px solid #6161619a;
+    border: none;
+    color: beige;
+    border-radius: 0;
+    transition: outline 1s, border-radius 1s;
+  }
+  
+  .user_formControl:hover{
+    outline: 1px solid beige;
+    border-radius: 3px;
+  }
+  
+  .user_formControl-submit{
+    
+    width: 403px;
+    height: 45px;
+    margin-top: 10px;
+    background-color: beige;
+    color: rgb(5, 5, 5);
+    border: none;
+    transition:  background-color 1s, color 1s ;
+  
+  }
+  
+  .user_formControl-submit:hover{
+    background-color: rgb(7, 7, 7);
+    color: beige;
+    outline: 1px solid beige;
+  
+  }

@@ -1,0 +1,73 @@
+{% extends 'maintemplate.html' %}
+{% block title %} search{% endblock  %}
+
+
+{% block content %}
+{% if searched %}
+<div class= 'search_container container'>
+<p>You are searching for:  {{searched}}<p>
+    <br><br>
+
+
+{% for result in res %}
+<div class='container'>
+    <div class='row'>
+        <div class='col-5'>
+            <div class='my-col'>
+                <img class='product-image' src="{{media_url}}{{result.image}}/product-{{result.id}}.jpg" alt="product">
+            </div>
+        </div>
+
+        <div class='col-5'>
+            <div class='my-col'>                
+                <h5 style='font-size: 20px'> {{result.brand}}</h5>
+                <hr>
+                <h4 style='font-size: 18px'> {{result.title}}</h4>
+                <br>
+                <p style='font-size: 14px'>${{result.price}}</p>
+                <br>
+                <p style='font-size: 14px'> {{result.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endfor %}
+
+{% for result in res2 %}
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-5'>
+            <div class='my-col'>
+                <img class='product-image' src="{{media_url}}{{result.image}}/product-{{result.id}}.jpg" alt="product">
+            </div>
+        </div>
+
+        <div class='col-5'>
+            <div class='my-col'>                
+                <h5 style='font-size: 20px'> {{result.brand}}</h5>
+                <hr>
+                <h4 style='font-size: 18px'> {{result.title}}</h4>
+                <br>
+                <p style='font-size: 14px'>${{result.price}}</p>
+                <br>
+                <p style='font-size: 14px'> {{result.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endfor %}
+
+
+
+{% else %}
+<div class='container'>
+<p style='padding-top:250px; color:beige;'>You have not searched for any thing</p>
+</div>
+{% endif %}
+
+
+</div>
+{% endblock  %}

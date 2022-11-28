@@ -1,0 +1,48 @@
+{% extends 'maintemplate.html' %}
+
+
+{% block title %} User Panel{% endblock  %}
+
+
+{% block content %}
+
+
+<form class='user-panel-container' action="" method='POST'>
+<div class='contact-us-container'>
+<h5 class='question'>DO YOU HAVE QUESTIONS?</h5>
+<a class='contact-us' href="{% url 'contact_us:contact_us' %}"><p class='contact-us'>CONTACT US</p></a>
+</div>
+{% csrf_token %}
+<a class='acc-btn' href="/">LOGOUT</a>
+<a class='acc-btn' href="/accounts/password_change/">CHANGE PASSWORD</a>
+<h5 class='user-panel-title'>MY ACCOUNT</h5>
+<p class='user-panel-username'>Welcome back, {{user.username}}!</p>
+
+<table>
+    
+    <tr>
+        <tr><td><label class='label' for="id_first_name">First Name</label></tr></td>
+        <td >{{form.first_name}}</td>
+    </tr>
+    <tr>
+        <tr><td><label class='label' for="id_last_name">Last Name</label></td></tr>
+        <td >{{form.last_name}}</td>
+    </tr>
+    <tr>
+        <tr><td><label class='label' for="id_username">Username</label></td></tr>
+        <td >{{form.username}}</td>
+    </tr>
+    <tr>
+        <tr><td><label class='label' for="id_email">Email</label></td></tr>
+        <td >{{form.email}}</td>
+    </tr>
+    <tr>
+        <td><button type="submit" class="user_formControl-submit ">SAVE CHANGES</button></td>
+    </tr>
+</table>
+
+
+
+</form>
+
+{% endblock  %}

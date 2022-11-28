@@ -1,0 +1,34 @@
+{% extends 'maintemplate.html' %}
+{% block title %} Product details{% endblock  %}
+
+
+{% block content %}
+<div class='container'>
+    <div class='row'>
+        
+        <div class='col-6'>
+            <div style='padding-top: 300px;' class='my-col'>
+                <img class='product-image' src="{{media_url}}{{product.image}}/product-{{product.id}}.jpg" alt="product">
+            </div>
+        </div>
+
+        <div class='col-6'>
+            
+            <div style='padding-top: 300px;' class='my-col'>                
+                <h5> {{product.brand}}</h5>
+                <hr><br>
+                <h4> {{product.title}}</h4>
+                <br>
+                <p>${{product.price}}</p>
+                <br><br>
+                <p>{{product.description}}</p>
+                
+                
+                <p style='display: inline;'><i class='fa fa-eye' aria-hidden="true"></i>&nbsp;&nbsp;{{product.view_number}}</p>&nbsp;
+      
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

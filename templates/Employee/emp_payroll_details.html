@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Payroll Details</title>
+</head>
+<body>
+<div class='container'>
+    <h6 style='font-family: serif; display:inline'>{{payroll.employee}}</h6>&nbsp;
+    <h6 style='font-family: serif; display:inline'>Position: {{payroll.position}}</h6><br><br><hr>
+    <h4 style="font-family: serif;">Direct payments by company:</h5>
+    <h5 style=" font-family: serif;" >Basic:&nbsp;&nbsp; ${{payroll.basic}}</h5>
+    <h5 style=" font-family: serif;">Up-sell:&nbsp;&nbsp; ${{payroll.up_sell}}</h5>
+    <h5 style=" font-family: serif;">Allowance:&nbsp;&nbsp; ${{payroll.allowance}}</h5>
+    <h5 style=" font-family: serif;">Child Allowance:&nbsp;&nbsp; ${{payroll.child_allowance}}</h5>
+    <h5 style=" font-family: serif;">Unclaimed Vacations:&nbsp;&nbsp; ${{payroll.unclaimed_vacation}}</h5><hr><br>
+    <h4 style="font-family: serif;" class='text-danger'>Indirect payments by company:</h4>
+    <h5 style=" font-family: serif;">Insurance Carried Company:&nbsp;&nbsp; ${{payroll.insurance_carried_company}}</h5>
+    <h5 style=" font-family: serif;">Retirement:&nbsp;&nbsp; ${{payroll.retirement}}</h5><hr><br>
+    <h4 style="font-family: serif; font-family: serif;" class='text-danger'>Employee direct deductions:</h5>
+    <h5 style=" font-family: serif;">Insurance Carried Employee:&nbsp;&nbsp; ${{payroll.insurance_carried_employee}}</h4>
+    <h5 style=" font-family: serif;">Absence Deduction:&nbsp;&nbsp; ${{payroll.deduction_absense}}</h5>
+    <h5 style=" font-family: serif;">Tax Deduction:&nbsp;&nbsp; ${{payroll.deduction_tax}}</h5><hr><br>
+    <h4 style="font-family: serif;" class='text-danger'>Employee monthly cash in hand clearance (to be decucted from salary):</h4>
+    <h5 style=" font-family: serif;">Cash in hand:&nbsp;&nbsp; ${{payroll.cash_in_hand}}</h5><br><br><hr>
+    <h3 style=" font-family: serif;">Net Salary:&nbsp;&nbsp; ${{payroll.net_salary}}</h3><br>
+    <a href="/employee_payroll/"><button type="submit" class="btn btn-dark">New Payroll</button></a>&nbsp;&nbsp;
+    <a href="/"><button type="submit" class="btn btn-dark">Home</button></a><br><br><br>
+    
+
+</div>
+
+
+</body>
+</html>
+

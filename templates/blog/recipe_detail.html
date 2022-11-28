@@ -1,0 +1,95 @@
+{% extends 'maintemplate.html' %}
+{% block title %}Recipe details{% endblock %}
+{% block content %}
+
+
+<div style='padding-top:300px; color: beige;' class='container'>
+
+<div><center><img style='width:60% ' src="{{media_url}}{{recipe.image}}" alt=""></div></center>
+<br><br>
+<center><h4>{{recipe.title}}</h4></center>
+<br>
+<p style='text-align:justify;'>{{recipe.description}}</p>
+
+<div>
+<span> <i class='fa fa-eye'></i> {{recipe.view_counter}}</span>&nbsp; &nbsp;
+
+{% if user.is_authenticated %}
+    {% comment %} if user previously liked the article, it will apeare as red thumb {% endcomment %}
+    {% if recipe.id in recipe_liked_id %}
+        <span> <i class=' recipe_like fa fa-thumbs-up text-danger' id='recipe_like{{recipe.id}}' data-catid='{{recipe.id}}'></i> {{recipe.like_counter}}</span><hr><br>
+
+        {% comment %} if article is not liked previously, thumbe apeares as following:  {% endcomment %}
+    {% else %}
+        <span> <i type='button' class=' type recipe_like fa fa-thumbs-up text-light' id='recipe_like{{recipe.id}}' data-catid='{{recipe.id}}'></i> {{recipe.like_counter}}</span><hr><br>
+    {% endif %}
+{% else %}
+<span> <i class=' fa fa-thumbs-up text-light'></i> {{recipe.like_counter}}</span><hr><br>
+{% endif %}
+
+
+
+{% comment %} blog comment forms {% endcomment %}
+<h4>Comments....</h4><br>
+<h6>Your comments will help us to evaluate our service and improve it.</h6><hr><br>
+{% comment %} comment model connected to recipe model by "related name" {% endcomment %}
+{% for comment in recipe.comments.all %}
+<strong style='font-style: italic;'>{{comment.name}}-{{comment.time}}</strong><br>
+{{comment.like_count}} <a><i type='button' style='font-size: 11px;' class='like_btn fa fa-thumbs-up text-light' id='like_btn{{comment.id}}' data-catid='{{comment.id}}'></i></a> <p style='display:inline;'>{{comment.body}}</p><br><br> 
+
+{% endfor %}
+
+<form action="" method='POST'>
+    {% csrf_token %}
+    {% comment %} if user loged in can see the following form: {% endcomment %}
+    {% if not user.is_authenticated %}
+    <label for="id_email">Email:</label>
+    <div>{{form.email}}</div>
+    <label for="id_name">Name:</label>
+    <div>{{form.name}}</div>
+    <label for="id_body">Comment:</label>
+    <div>{{form.body}}</div>
+    <button type="submit" class="user_formControl-submit">post</button>
+    
+    {% comment %} if user is not loged in can see the following form:  {% endcomment %}
+    {% else %}
+    <label for="id_body">Comment:</label>
+    <div>{{form.body}}</div>
+    <button type="submit" class="user_formControl-submit">post</button>
+    {% endif %}
+</form>
+</div></div>
+
+{% comment %} ajax for blog recipe like {% endcomment %}
+<script>
+    $('.recipe_like').click(function(){
+        var recipe_id=$(this).attr('data-catid');
+
+        $.ajax({
+            type:'GET',
+            url:'/recipe_like/',
+            data:{id:recipe_id},
+            success:function(data){
+                    $('#recipe_like'+recipe_id).removeClass('text-light');
+                    $('#recipe_like'+recipe_id).addClass('text-danger');}
+        });
+    });
+</script>
+
+{% comment %} ajax for comments like {% endcomment %}
+<script>
+    $('.like_btn').click(function(){
+        var comment_id=$(this).attr('data-catid');
+
+        $.ajax({
+            type:'GET',
+            url:'/comment_like/',
+            data:{
+                id:comment_id},
+            success:function(data){
+                    $('#like_btn'+comment_id).removeClass('text-light');
+                    $('#like_btn'+comment_id).addClass('text-danger');}
+        });
+    });
+</script>
+{% endblock  %}

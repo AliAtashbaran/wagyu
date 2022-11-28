@@ -1,0 +1,97 @@
+/* body: background color */
+.background{
+  
+  background-color: #000000;
+}
+
+/* ------------------------------ */
+::placeholder{
+  color:beige;
+}
+
+/* ------------------------------ */
+::marker{
+  color:beige;
+}
+
+/* -------------------------------- */
+/* slider images */
+.slider{
+  width: 100%;
+}
+
+/* -------------------------------- */
+/* search button text color adjustment */
+.search-btn{
+  background-color: #000000;
+  color:beige;
+
+}
+
+/* --------------------------------- */
+
+.search_container{
+  padding-top: 250px;
+  color: beige;
+
+}
+
+/* --------------------------- */
+
+.product_container{
+ 
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.card{
+  background-color: #000000 !important;
+}
+
+.card-title, .card-text{
+  color:beige;
+  text-align:center;
+}
+
+.product_btn{
+  width: 100%;
+}
+
+.featured_product_container{
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  color:beige;
+}
+
+.product-image{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.my-col{
+  color:beige;
+}
+
+.about_us_container{
+  padding-top: 270px;
+  color: beige;
+  
+}
+
+.about_us_title{
+  display: flex;
+  justify-content: center;
+   
+}
+
+.about_us_text{
+  text-align: justify;
+  font-size: 14px;
+}
+
+
+
+
+
